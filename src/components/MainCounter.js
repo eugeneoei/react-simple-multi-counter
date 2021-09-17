@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import Counter from './Counter'
 
 const MainCounter = () => {
 
 	const [resetCount, setResetCount] = useState(0)
 
-	const handleResetCount = () => {
+	const handleResetAllCounters = () => {
 		setResetCount(resetCount + 1)
 	}
 
@@ -23,13 +24,25 @@ const MainCounter = () => {
 			<div className='container'>
 				<div className='row'>
 					<div className='col-xs-12 col-sm-4'>
-						counter 1
+						<Counter 
+							name={'Counter 1'}
+							resetCount={resetCount}
+							resetAllCounters={handleResetAllCounters}
+						/>
 					</div>
 					<div className='col-xs-12 col-sm-4'>
-						counter 2
+						<Counter 
+							name={'Counter 2'}
+							resetCount={resetCount}
+							resetAllCounters={handleResetAllCounters}
+						/>
 					</div>
 					<div className='col-xs-12 col-sm-4'>
-						counter 3
+						<Counter 
+							name={'Counter 3'}
+							resetCount={resetCount}
+							resetAllCounters={handleResetAllCounters}
+						/>
 					</div>
 				</div>
 			</div>
